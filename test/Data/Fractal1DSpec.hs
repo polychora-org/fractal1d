@@ -5,6 +5,7 @@ import Test.QuickCheck
 
 import Data.Fractal1D
 import Data.Vector (fromList)
+import qualified Data.Vector as Vector
 
 main :: IO ()
 main = hspec spec
@@ -26,3 +27,5 @@ spec = do
                                                , 0.25
                                                , 0.125
                                                ]
+    it "should have the same value when reversing the result as reversing the input" $ property $
+      \xs (NonNegative (Small i)) -> i <= 2 ==> Vector.reverse (fractal xs i) === fractal (reverse xs) i
