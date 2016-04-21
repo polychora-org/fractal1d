@@ -4,8 +4,8 @@ import Test.Hspec
 import Test.QuickCheck
 
 import Data.Fractal1D
-import Data.Vector (fromList)
-import qualified Data.Vector as Vector
+import Data.Vector.Unboxed (fromList)
+import qualified Data.Vector.Unboxed as Vector
 
 main :: IO ()
 main = hspec spec
