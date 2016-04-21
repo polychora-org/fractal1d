@@ -16,3 +16,13 @@ spec = do
       \xs -> fractal xs 0 === fromList xs
     it "should return the seed iterated once" $
       fractal [1.0, 0.5] 1 `shouldBe` fromList [1.0, 0.5, 0.5, 0.25]
+    it "should return the seed iterated twice" $
+      fractal [1.0, 0.5] 2 `shouldBe` fromList [ 1.0
+                                               , 0.5
+                                               , 0.5
+                                               , 0.25
+                                               , 0.5
+                                               , 0.25
+                                               , 0.25
+                                               , 0.125
+                                               ]
